@@ -108,12 +108,6 @@ class ZipRepository implements RepositoryInterface
     public function each($callback)
     {
         for ($i = 0; $i < $this->archive->numFiles; $i++) {
-
-            //skip if folder
-            $stats = $this->archive->statIndex($i);
-            if ($stats['size'] == 0 && $stats['crc'] == 0)
-                continue;
-
             call_user_func_array($callback, array(
                 'file' => $this->archive->getNameIndex($i),
             ));
