@@ -31,6 +31,16 @@ class ZipRepository implements RepositoryInterface
     }
 
     /**
+     * Get Archive
+     *
+     * @return ZipArchive
+     */
+    public function getArchive()
+    {
+        return $this->archive;
+    }
+
+    /**
      * Add a file to the opened Archive
      *
      * @param $pathToFile
